@@ -1,21 +1,21 @@
 //
-//  ADViewController.swift
+//  OpenDetailViewController.swift
 //  EzOrder(Management)
 //
-//  Created by 李泰儀 on 2019/5/16.
+//  Created by Lee Chien Kuan on 2019/6/6.
 //  Copyright © 2019 TerryLee. All rights reserved.
 //
 
 import UIKit
 
-class ADViewController: UIViewController {
+class OpenDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+    var test: String?
 
     /*
     // MARK: - Navigation
