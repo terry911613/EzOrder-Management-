@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162ABD342AF297515036DA1F /* Pods_EzOrder_Management_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7F3EEF13C9C581C2BF9D6 /* Pods_EzOrder_Management_.framework */; };
 		447A1765228C6E6B003AB41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447A1764228C6E6B003AB41E /* AppDelegate.swift */; };
 		447A176A228C6E6B003AB41E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447A1768228C6E6B003AB41E /* Main.storyboard */; };
 		447A176C228C6E6C003AB41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447A176B228C6E6C003AB41E /* Assets.xcassets */; };
@@ -29,11 +30,14 @@
 		447A1770228C6E6C003AB41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447A177A228C6F15003AB41E /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		447A177E228C6FB9003AB41E /* AD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AD.storyboard; sourceTree = "<group>"; };
+		5932F6E8E30E2C75161FA2C3 /* Pods-EzOrder(Management).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzOrder(Management).release.xcconfig"; path = "Target Support Files/Pods-EzOrder(Management)/Pods-EzOrder(Management).release.xcconfig"; sourceTree = "<group>"; };
 		9DA955BD22A8D09E009365F5 /* MemberShipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberShipTableViewController.swift; sourceTree = "<group>"; };
 		9DA955C522A8DF16009365F5 /* OpenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDetailViewController.swift; sourceTree = "<group>"; };
 		9DA955C722A8E134009365F5 /* AdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewController.swift; sourceTree = "<group>"; };
 		9DA955C922A8E158009365F5 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		9DA955CD22A8F4E1009365F5 /* RestaurantApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantApplication.swift; sourceTree = "<group>"; };
+		DBD7F3EEF13C9C581C2BF9D6 /* Pods_EzOrder_Management_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EzOrder_Management_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7608EF14A4A7A306CC377AA /* Pods-EzOrder(Management).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzOrder(Management).debug.xcconfig"; path = "Target Support Files/Pods-EzOrder(Management)/Pods-EzOrder(Management).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162ABD342AF297515036DA1F /* Pods_EzOrder_Management_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				447A1763228C6E6B003AB41E /* EzOrder(Management) */,
 				447A1762228C6E6B003AB41E /* Products */,
+				4E4E9A69D12F93C4675025B5 /* Pods */,
+				A343668052F8AD3AF259FDDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +128,16 @@
 			path = Membership;
 			sourceTree = "<group>";
 		};
+		4E4E9A69D12F93C4675025B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7608EF14A4A7A306CC377AA /* Pods-EzOrder(Management).debug.xcconfig */,
+				5932F6E8E30E2C75161FA2C3 /* Pods-EzOrder(Management).release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9DA955C122A8D2EF009365F5 /* Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +155,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A343668052F8AD3AF259FDDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7F3EEF13C9C581C2BF9D6 /* Pods_EzOrder_Management_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 447A1773228C6E6C003AB41E /* Build configuration list for PBXNativeTarget "EzOrder(Management)" */;
 			buildPhases = (
+				3B50CFED2749401198376FEF /* [CP] Check Pods Manifest.lock */,
 				447A175D228C6E6B003AB41E /* Sources */,
 				447A175E228C6E6B003AB41E /* Frameworks */,
 				447A175F228C6E6B003AB41E /* Resources */,
+				33F6E09E188984F5C19E0642 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33F6E09E188984F5C19E0642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EzOrder(Management)/Pods-EzOrder(Management)-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EzOrder(Management)/Pods-EzOrder(Management)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B50CFED2749401198376FEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EzOrder(Management)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		447A175D228C6E6B003AB41E /* Sources */ = {
@@ -360,6 +452,7 @@
 		};
 		447A1774228C6E6C003AB41E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7608EF14A4A7A306CC377AA /* Pods-EzOrder(Management).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +471,7 @@
 		};
 		447A1775228C6E6C003AB41E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5932F6E8E30E2C75161FA2C3 /* Pods-EzOrder(Management).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
