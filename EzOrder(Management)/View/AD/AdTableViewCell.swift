@@ -10,8 +10,10 @@ import UIKit
 
 class AdTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var AdImg: UIImageView!
+    @IBOutlet weak var resImageView: UIImageView!
     @IBOutlet weak var RestaurantNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

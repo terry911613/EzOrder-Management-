@@ -14,6 +14,8 @@
 		447A176F228C6E6C003AB41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447A176D228C6E6C003AB41E /* LaunchScreen.storyboard */; };
 		447A177B228C6F15003AB41E /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447A177A228C6F15003AB41E /* Membership.storyboard */; };
 		447A177F228C6FB9003AB41E /* AD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447A177E228C6FB9003AB41E /* AD.storyboard */; };
+		44DB382C22AFF61500C69C0B /* AdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB382B22AFF61500C69C0B /* AdDetailViewController.swift */; };
+		44DB382E22AFFDC500C69C0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DB382D22AFFDC500C69C0B /* GoogleService-Info.plist */; };
 		9DA955BE22A8D09E009365F5 /* MemberShipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA955BD22A8D09E009365F5 /* MemberShipTableViewController.swift */; };
 		9DA955C622A8DF16009365F5 /* OpenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA955C522A8DF16009365F5 /* OpenDetailViewController.swift */; };
 		9DA955C822A8E134009365F5 /* AdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA955C722A8E134009365F5 /* AdTableViewController.swift */; };
@@ -30,6 +32,8 @@
 		447A1770228C6E6C003AB41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447A177A228C6F15003AB41E /* Membership.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		447A177E228C6FB9003AB41E /* AD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AD.storyboard; sourceTree = "<group>"; };
+		44DB382B22AFF61500C69C0B /* AdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewController.swift; sourceTree = "<group>"; };
+		44DB382D22AFFDC500C69C0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5932F6E8E30E2C75161FA2C3 /* Pods-EzOrder(Management).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzOrder(Management).release.xcconfig"; path = "Target Support Files/Pods-EzOrder(Management)/Pods-EzOrder(Management).release.xcconfig"; sourceTree = "<group>"; };
 		9DA955BD22A8D09E009365F5 /* MemberShipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberShipTableViewController.swift; sourceTree = "<group>"; };
 		9DA955C522A8DF16009365F5 /* OpenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDetailViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				9DA955C422A8D693009365F5 /* Controller */,
 				447A1776228C6E88003AB41E /* Supporting File */,
 				447A1770228C6E6C003AB41E /* Info.plist */,
+				44DB382D22AFFDC500C69C0B /* GoogleService-Info.plist */,
 			);
 			path = "EzOrder(Management)";
 			sourceTree = "<group>";
@@ -134,7 +139,6 @@
 				F7608EF14A4A7A306CC377AA /* Pods-EzOrder(Management).debug.xcconfig */,
 				5932F6E8E30E2C75161FA2C3 /* Pods-EzOrder(Management).release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA955C722A8E134009365F5 /* AdTableViewController.swift */,
+				44DB382B22AFF61500C69C0B /* AdDetailViewController.swift */,
 				9DA955BD22A8D09E009365F5 /* MemberShipTableViewController.swift */,
 				9DA955C522A8DF16009365F5 /* OpenDetailViewController.swift */,
 			);
@@ -228,6 +233,7 @@
 				447A177F228C6FB9003AB41E /* AD.storyboard in Resources */,
 				447A177B228C6F15003AB41E /* Membership.storyboard in Resources */,
 				447A176A228C6E6B003AB41E /* Main.storyboard in Resources */,
+				44DB382E22AFFDC500C69C0B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44DB382C22AFF61500C69C0B /* AdDetailViewController.swift in Sources */,
 				9DA955CA22A8E158009365F5 /* AdTableViewCell.swift in Sources */,
 				9DA955C822A8E134009365F5 /* AdTableViewController.swift in Sources */,
 				9DA955C622A8DF16009365F5 /* OpenDetailViewController.swift in Sources */,
@@ -462,7 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.TerryLee.EzOrder-Management-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TerryLee.EzOrderManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.TerryLee.EzOrder-Management-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TerryLee.EzOrderManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

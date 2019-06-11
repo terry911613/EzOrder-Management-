@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>723414899340-3f055m37qrsv55cfvjb6rbcqed56aquh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.723414899340-3f055m37qrsv55cfvjb6rbcqed56aquh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBHYrxRxd9OexuJ5We4tN9QgplQ_w6ntxw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>723414899340</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.TerryLee.EzOrderManagement</string>
+	<key>PROJECT_ID</key>
+	<string>ezorder-res</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ezorder-res.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:723414899340:ios:24d3fa6cf65f8ff2</string>
+	<key>DATABASE_URL</key>
+	<string>https://ezorder-res.firebaseio.com</string>
+</dict>
+</plist>
