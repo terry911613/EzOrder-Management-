@@ -10,8 +10,10 @@ import UIKit
 
 class MemberShipTableViewController: UITableViewController {
     var restaurantApplications = [RestaurantApplication]()
+    var members = [["member1", "member11"]]
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("1")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,18 +31,20 @@ class MemberShipTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurantApplications.count
+        return members.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantsCell", for: indexPath)
-        cell.textLabel?.text = restaurantApplications[indexPath.row].name
-        if restaurantApplications[indexPath.row].result == true {
-            cell.detailTextLabel?.text = "已允許"
-        } else {
-            cell.detailTextLabel?.text = "已駁回"
-        }
+        cell.textLabel?.text = members[indexPath.row][0]
+        cell.detailTextLabel?.text = members[indexPath.row][1]
+//        cell.textLabel?.text = restaurantApplications[indexPath.row].name
+//        if restaurantApplications[indexPath.row].result == true {
+//            cell.detailTextLabel?.text = "已允許"
+//        } else {
+//            cell.detailTextLabel?.text = "已駁回"
+//        }
         // Configure the cell...
 
         return cell

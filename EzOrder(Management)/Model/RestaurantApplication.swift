@@ -10,4 +10,5 @@ import Foundation
 class RestaurantApplication {
     var name: String? = "取得紀錄時發生錯誤"
     var result: Bool?
+    
 }
