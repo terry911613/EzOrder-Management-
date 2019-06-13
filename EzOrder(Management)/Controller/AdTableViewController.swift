@@ -23,13 +23,15 @@ class AdTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let db = Firestore.firestore()
-        db.collection("manage").document("check").collection("AD").whereField("ADStatus", isEqualTo: 0).order(by: "date", descending: false).getDocuments { (AD, error) in
+        db.collection("manage").document("check").collection("AD").whereField("ADStatus", isEqualTo: 0).order(by: "date", descending: false).addSnapshotListener { (AD, error) in
+            print(123123)
             if let AD = AD{
                 if AD.documents.isEmpty{
                     self.adArray.removeAll()
                     self.tableView.reloadData()
                 }
                 else{
+                    print("dsfdsf")
                     self.adArray = AD.documents
                     self.animateTableView()
                 }

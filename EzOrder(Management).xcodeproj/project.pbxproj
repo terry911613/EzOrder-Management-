@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				447A1768228C6E6B003AB41E /* Main.storyboard */,
-				447A177A228C6F15003AB41E /* Membership.storyboard */,
 				447A177E228C6FB9003AB41E /* AD.storyboard */,
+				447A177A228C6F15003AB41E /* Membership.storyboard */,
 				9DA955CD22A8F4E1009365F5 /* RestaurantApplication.swift */,
 			);
 			path = Model;
