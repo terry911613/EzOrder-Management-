@@ -23,7 +23,6 @@ class AdDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         format.locale = Locale(identifier: "zh_TW")
         format.dateFormat = "yyyy年MM月dd日 a hh:mm"
         
@@ -73,8 +72,6 @@ class AdDetailViewController: UIViewController {
             print(21213)
             
             let db = Firestore.firestore()
-            print(self.documentID)
-            print(self.resID)
             if let documentID = self.documentID,
                 let resID = self.resID{
                 print(12)
