@@ -38,8 +38,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-QH-2pB">
-                                            <rect key="frame" x="316" y="86" width="38" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-QH-2pB">
+                                            <rect key="frame" x="354" y="104" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -106,15 +106,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5D-Xu-N7z">
-                                <rect key="frame" x="195" y="478" width="100" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.59670647659999998" blue="0.57797562250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="245" y="478" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RfN-zW-Hi4"/>
-                                    <constraint firstAttribute="width" constant="100" id="hJH-Cw-T6M"/>
+                                    <constraint firstAttribute="width" constant="50" id="hJH-Cw-T6M"/>
                                 </constraints>
-                                <state key="normal" title="確定">
-                                    <color key="titleColor" red="0.92550259830000003" green="0.92546778919999995" blue="0.92549145219999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" image="组 38"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="17"/>
@@ -124,15 +121,13 @@
                                     <action selector="doneButton:" destination="DTa-Wa-bQF" eventType="touchUpInside" id="jhs-pj-V0m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyQ-yP-ZC2">
-                                <rect key="frame" x="80" y="478" width="100" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.59670647659999998" blue="0.57797562250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyQ-yP-ZC2">
+                                <rect key="frame" x="80" y="478" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8o5-i6-ucG"/>
-                                    <constraint firstAttribute="width" constant="100" id="kXB-Rf-cZB"/>
+                                    <constraint firstAttribute="width" constant="50" id="kXB-Rf-cZB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="退回">
+                                <state key="normal" image="cancel">
                                     <color key="titleColor" red="0.92550259830000003" green="0.92546778919999995" blue="0.92549145219999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -192,4 +187,8 @@
             <point key="canvasLocation" x="839.20000000000005" y="196.55172413793105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel" width="346" height="346"/>
+        <image name="组 38" width="349" height="349"/>
+    </resources>
 </document>

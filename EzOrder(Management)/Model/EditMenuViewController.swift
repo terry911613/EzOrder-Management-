@@ -306,7 +306,7 @@ extension EditMenuViewController: UICollectionViewDelegate,UICollectionViewDataS
         if collectionView == typeCollectionView{
             selectIndex = indexPath
             let cell = collectionView.cellForItem(at: indexPath) as! EditTypeCollectionViewCell
-            cell.backView.backgroundColor = UIColor(red: 255/255, green: 66/255, blue: 150/255, alpha: 1)
+//            cell.backView.backgroundColor = UIColor(red: 255/255, green: 66/255, blue: 150/255, alpha: 1)
             //            print("didselect:\(indexPath.row)")
             typeIndex = indexPath.row
             //            print("typeIndex: \(typeIndex)")
@@ -325,7 +325,7 @@ extension EditMenuViewController: UICollectionViewDelegate,UICollectionViewDataS
         if collectionView == typeCollectionView{
             
             let cell = collectionView.cellForItem(at: indexPath) as! EditTypeCollectionViewCell
-            cell.backView.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 195/255, alpha: 1)
+        //    cell.backView.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 195/255, alpha: 1)
             print(20)
             //            print("diddeselect:\(indexPath.row)")
         }
