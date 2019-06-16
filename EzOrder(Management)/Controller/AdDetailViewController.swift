@@ -48,11 +48,9 @@ class AdDetailViewController: UIViewController {
         
         let alert = UIAlertController(title: "確定退回?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
-            print(123123123)
             let db = Firestore.firestore()
             if let documentID = self.documentID,
                 let resID = self.resID{
-                print(555)
                 db.collection("manage").document("check").collection("AD").document(documentID).updateData(["ADStatus": 2])
                 db.collection("res").document(resID).collection("AD").document(documentID).updateData(["ADStatus": 2])
                 self.navigationController?.popViewController(animated: true)

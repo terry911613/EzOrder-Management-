@@ -501,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVB2JZ6L9X;
+				DEVELOPMENT_TEAM = PY8GD98FSY;
 				INFOPLIST_FILE = "EzOrder(Management)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,7 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVB2JZ6L9X;
+				DEVELOPMENT_TEAM = PY8GD98FSY;
 				INFOPLIST_FILE = "EzOrder(Management)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

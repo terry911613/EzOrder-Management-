@@ -9,7 +9,7 @@
 import UIKit
 
 class MemberShipTableViewCell: UITableViewCell {
-    
+    @IBOutlet weak var fuckView: UIView!
     @IBOutlet weak var imageVIew: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!

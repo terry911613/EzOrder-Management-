@@ -158,7 +158,7 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
     }
     
     @IBAction func okay(_ sender: Any) {
-        
+        storeconfirm()
         let alert = UIAlertController(title: "確定申請通過?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
             print(21213)
@@ -179,6 +179,7 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
     }
     
     @IBAction func noay(_ sender: Any) {
+        storeconfirms()
         let alert = UIAlertController(title: "確定退回?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
             print(123123123)
@@ -194,6 +195,20 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
 
+    }
+    
+    func storeconfirm() {
+        let db = Firestore.firestore()
+        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 1])
+        }
+        
+        
+    }
+    
+    func storeconfirms () {
+        let db = Firestore.firestore()
+        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 2])
+        }
     }
     
     

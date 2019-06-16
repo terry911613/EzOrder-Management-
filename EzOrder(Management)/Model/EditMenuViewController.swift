@@ -41,12 +41,13 @@ class EditMenuViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        
+        print("??????????????????????????????????????")
         getType()
         if typeArray.isEmpty == false, let typeIndex = typeIndex{
-            if let type = typeArray[typeIndex].data()["typeName"] as? String{
-                print(type)
-                getFood(typeName: type)
+            if let type = typeArray[typeIndex].data()["typeDocumentID"] as? String{
+                print("1",type)
+                
+                getFood(typeDocumentID: type)
                 
             }
         }
@@ -72,11 +73,11 @@ class EditMenuViewController: UIViewController {
             }
         }
     }
-    func getFood(typeName: String){
+    func getFood(typeDocumentID: String){
         print("-------------")
-        //   print(typeName)
+           print(typeDocumentID)
         if let prepares = prepares{
-            db.collection("res").document(prepares).collection("foodType").document(typeName).collection("menu").order(by: "foodIndex", descending: false).addSnapshotListener { (food, error) in
+            db.collection("res").document(prepares).collection("foodType").document(typeDocumentID).collection("menu").order(by: "foodIndex", descending: false).addSnapshotListener { (food, error) in
                 if let food = food{
                     if food.documents.isEmpty{
                         self.foodArray.removeAll()
@@ -310,8 +311,8 @@ extension EditMenuViewController: UICollectionViewDelegate,UICollectionViewDataS
             //            print("didselect:\(indexPath.row)")
             typeIndex = indexPath.row
             //            print("typeIndex: \(typeIndex)")
-            if let type = typeArray[indexPath.row].data()["typeName"] as? String{
-                getFood(typeName: type)
+            if let type = typeArray[indexPath.row].data()["typeDocumentID"] as? String{
+                getFood(typeDocumentID: type)
             }
             
         }
