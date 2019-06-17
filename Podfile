@@ -13,5 +13,6 @@ pod 'Firebase/Storage'
 pod "Firebase/Auth"
 pod 'Kingfisher'
 pod "ViewAnimator"
+pod 'SVProgressHUD'
 
 end

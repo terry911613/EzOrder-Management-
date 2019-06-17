@@ -24,15 +24,13 @@ class AdTableViewController: UITableViewController {
         
         let db = Firestore.firestore()
         db.collection("manage").document("check").collection("AD").whereField("ADStatus", isEqualTo: 0).order(by: "date", descending: false).addSnapshotListener { (AD, error) in
-            print(123123)
-            if let AD = AD{
+                    if let AD = AD{
                 if AD.documents.isEmpty{
                     self.adArray.removeAll()
                     self.tableView.reloadData()
                 }
                 else{
-                    print("dsfdsf")
-                    self.adArray = AD.documents
+                        self.adArray = AD.documents
                     self.animateTableView()
                 }
             }
@@ -77,6 +75,8 @@ class AdTableViewController: UITableViewController {
                 if AD.documents.isEmpty == false{
                     if let resID = AD.documents[indexPath.row].data()["resID"] as? String,
                         let timeStamp = AD.documents[indexPath.row].data()["date"] as? Timestamp{
+                        print(resID)
+                        
                         
                         db.collection("res").document(resID).getDocument { (res, error) in
                             if let resData = res?.data(){
@@ -102,6 +102,7 @@ class AdTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let AD = adArray[indexPath.row]
         selectAd = AD
+        print(AD)
         performSegue(withIdentifier: "adDetailSegue", sender: self)
     }
  

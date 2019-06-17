@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		162ABD342AF297515036DA1F /* Pods_EzOrder_Management_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7F3EEF13C9C581C2BF9D6 /* Pods_EzOrder_Management_.framework */; };
+		2C0205A422B2492200062DF5 /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0205A322B2492200062DF5 /* EditInfoViewController.swift */; };
+		2C900B3F22B24A8000300EB3 /* EditMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B3E22B24A8000300EB3 /* EditMenuViewController.swift */; };
+		2C900B4122B24B0400300EB3 /* MainTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4022B24B0400300EB3 /* MainTypeCollectionViewCell.swift */; };
+		2C900B4522B24B7200300EB3 /* EditTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4422B24B7200300EB3 /* EditTypeCollectionViewCell.swift */; };
+		2C900B4722B24BBC00300EB3 /* EditFoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4622B24BBC00300EB3 /* EditFoodCollectionViewCell.swift */; };
+		2C900B4922B24C0100300EB3 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4822B24C0100300EB3 /* FoodDetailViewController.swift */; };
+		2C900B4B22B24C9000300EB3 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4A22B24C9000300EB3 /* FoodViewController.swift */; };
+		2C900B4D22B24CE000300EB3 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4C22B24CE000300EB3 /* TypeViewController.swift */; };
+		2C900B4F22B2820900300EB3 /* MemberShipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4E22B2820900300EB3 /* MemberShipTableViewCell.swift */; };
 		447A1765228C6E6B003AB41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447A1764228C6E6B003AB41E /* AppDelegate.swift */; };
 		447A176A228C6E6B003AB41E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447A1768228C6E6B003AB41E /* Main.storyboard */; };
 		447A176C228C6E6C003AB41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447A176B228C6E6C003AB41E /* Assets.xcassets */; };
@@ -24,6 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0205A322B2492200062DF5 /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
+		2C900B3E22B24A8000300EB3 /* EditMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewController.swift; sourceTree = "<group>"; };
+		2C900B4022B24B0400300EB3 /* MainTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C900B4422B24B7200300EB3 /* EditTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C900B4622B24BBC00300EB3 /* EditFoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C900B4822B24C0100300EB3 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		2C900B4A22B24C9000300EB3 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		2C900B4C22B24CE000300EB3 /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		2C900B4E22B2820900300EB3 /* MemberShipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberShipTableViewCell.swift; sourceTree = "<group>"; };
 		447A1761228C6E6B003AB41E /* EzOrder(Management).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EzOrder(Management).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		447A1764228C6E6B003AB41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		447A1769228C6E6B003AB41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,7 +131,14 @@
 				447A1768228C6E6B003AB41E /* Main.storyboard */,
 				447A177E228C6FB9003AB41E /* AD.storyboard */,
 				447A177A228C6F15003AB41E /* Membership.storyboard */,
+				2C900B4C22B24CE000300EB3 /* TypeViewController.swift */,
+				2C900B4A22B24C9000300EB3 /* FoodViewController.swift */,
+				2C900B3E22B24A8000300EB3 /* EditMenuViewController.swift */,
+				2C900B4822B24C0100300EB3 /* FoodDetailViewController.swift */,
+				2C900B4622B24BBC00300EB3 /* EditFoodCollectionViewCell.swift */,
+				2C900B4022B24B0400300EB3 /* MainTypeCollectionViewCell.swift */,
 				9DA955CD22A8F4E1009365F5 /* RestaurantApplication.swift */,
+				2C900B4422B24B7200300EB3 /* EditTypeCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +154,7 @@
 		447A1782228C6FE9003AB41E /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				2C900B4E22B2820900300EB3 /* MemberShipTableViewCell.swift */,
 			);
 			path = Membership;
 			sourceTree = "<group>";
@@ -152,6 +178,7 @@
 		9DA955C422A8D693009365F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C0205A322B2492200062DF5 /* EditInfoViewController.swift */,
 				9DA955C722A8E134009365F5 /* AdTableViewController.swift */,
 				44DB382B22AFF61500C69C0B /* AdDetailViewController.swift */,
 				9DA955BD22A8D09E009365F5 /* MemberShipTableViewController.swift */,
@@ -254,6 +281,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -269,6 +297,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -309,13 +338,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0205A422B2492200062DF5 /* EditInfoViewController.swift in Sources */,
+				2C900B4922B24C0100300EB3 /* FoodDetailViewController.swift in Sources */,
 				44DB382C22AFF61500C69C0B /* AdDetailViewController.swift in Sources */,
+				2C900B4122B24B0400300EB3 /* MainTypeCollectionViewCell.swift in Sources */,
 				9DA955CA22A8E158009365F5 /* AdTableViewCell.swift in Sources */,
+				2C900B4722B24BBC00300EB3 /* EditFoodCollectionViewCell.swift in Sources */,
+				2C900B4D22B24CE000300EB3 /* TypeViewController.swift in Sources */,
+				2C900B4F22B2820900300EB3 /* MemberShipTableViewCell.swift in Sources */,
 				9DA955C822A8E134009365F5 /* AdTableViewController.swift in Sources */,
 				9DA955C622A8DF16009365F5 /* OpenDetailViewController.swift in Sources */,
+				2C900B4B22B24C9000300EB3 /* FoodViewController.swift in Sources */,
+				2C900B4522B24B7200300EB3 /* EditTypeCollectionViewCell.swift in Sources */,
 				9DA955BE22A8D09E009365F5 /* MemberShipTableViewController.swift in Sources */,
 				447A1765228C6E6B003AB41E /* AppDelegate.swift in Sources */,
 				9DA955CE22A8F4E1009365F5 /* RestaurantApplication.swift in Sources */,
+				2C900B3F22B24A8000300EB3 /* EditMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVB2JZ6L9X;
+				DEVELOPMENT_TEAM = PY8GD98FSY;
 				INFOPLIST_FILE = "EzOrder(Management)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,7 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XVB2JZ6L9X;
+				DEVELOPMENT_TEAM = PY8GD98FSY;
 				INFOPLIST_FILE = "EzOrder(Management)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

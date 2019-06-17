@@ -7,95 +7,128 @@
 //
 
 import UIKit
+import Firebase
+import Kingfisher
+import ViewAnimator
 
 class MemberShipTableViewController: UITableViewController {
-    var restaurantApplications = [RestaurantApplication]()
-    var members = [["member1", "member11"]]
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("1")
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    var adArray = [QueryDocumentSnapshot]()
+    let format = DateFormatter()
+    var performresid : String?
+    var typeID : String?
+    
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-
-    // MARK: - Table view data source
-
+    override func viewDidLoad() {
+        print(adArray.count)
+        let db = Firestore.firestore()
+        db.collection("manage").document("check").collection("storeconfirm").whereField("status", isEqualTo: 0).addSnapshotListener  { (store, error) in
+            if let store = store{
+                if store.documents.isEmpty{
+                    self.adArray.removeAll()
+                    self.tableView.reloadData()
+                }
+                else{
+                    print("dsfdsf")
+                    self.adArray = store.documents
+                    self.animateTableView()
+                }
+            }
+        }
+        format.locale = Locale(identifier: "zh_TW")
+        format.dateFormat = "yyyy年MM月dd日 a hh:mm"
+        super.viewDidLoad()
+    }
+    func animateTableView(){
+        let animations = [AnimationType.from(direction: .top, offset: 30.0)]
+        tableView.reloadData()
+        UIView.animate(views: tableView.visibleCells, animations: animations, completion: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let prepare = segue.destination as! EditInfoViewController
+        if let performresid = performresid {
+            prepare.documentID = typeID
+            prepare.resIDdocument = performresid
+        }
+        
+    }
+    
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return members.count
+        return adArray.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantsCell", for: indexPath)
-        cell.textLabel?.text = members[indexPath.row][0]
-        cell.detailTextLabel?.text = members[indexPath.row][1]
-//        cell.textLabel?.text = restaurantApplications[indexPath.row].name
-//        if restaurantApplications[indexPath.row].result == true {
-//            cell.detailTextLabel?.text = "已允許"
-//        } else {
-//            cell.detailTextLabel?.text = "已駁回"
-//        }
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantsCell", for: indexPath) as! MemberShipTableViewCell
+        let db = Firestore.firestore()
+        db.collection("manage").document("check").collection("storeconfirm").whereField("status", isEqualTo: 0).getDocuments { (store, error) in
+            if let store = store{
+                if store.documents.isEmpty == false{
+                    if let resID = store.documents[indexPath.row].data()["resID"] as? String,let timeStamp = store.documents[indexPath.row].data()["date"] as? Timestamp {
+                        db.collection("res").document(resID).getDocument { (res, error) in
+                            if let resData = res?.data(){
+                                if let resName = resData["resName"] as? String,
+                                    let resImage = resData["resImage"] as? String{
+                                    cell.nameLabel.text = resName
+                                    cell.imageVIew.kf.setImage(with: URL(string: resImage))
+                                    if indexPath.row == 0 {
+                                        cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
+                                    }
+                                    if indexPath.row == 1 {
+                                        cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
+                                    }
+                                    if indexPath.row == 2 {
+                                        cell.fuckView.backgroundColor = .init(red: 218/255, green: 100/266, blue: 122/255, alpha: 1)
 
+                                    }
+                                    if indexPath.row == 3 {
+                                        cell.fuckView.backgroundColor = .init(red: 152/255, green: 127/266, blue: 237/255, alpha: 1)
+
+                                    }
+                                    if indexPath.row == 4 {
+                                        cell.fuckView.backgroundColor = .init(red: 57/255, green: 221/266, blue: 150/255, alpha: 1)
+
+                                    }
+                                    if indexPath.row == 5 {
+                                        cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
+
+                                    }
+                                    if indexPath.row == 6 {
+                                        cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
+
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        cell.telLabel.text = self.format.string(from: timeStamp.dateValue())
+                    }
+                }
+            }
+        }
         return cell
     }
- 
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "openDetailSegue", sender: self)
-    }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let openDetailVC = segue.destination as? OpenDetailViewController {
-            openDetailVC.test = ""
+        let AD = adArray[indexPath.row]
+        let typeAD = adArray[indexPath.row].documentID
+        self.typeID = typeAD
+        if let resID = AD.data()["resID"] as? String{
+            self.performresid = resID
+            
         }
+        performSegue(withIdentifier: "performResId", sender: self)
+        
     }
-
+    
+    
+    
+    
+    
 }
