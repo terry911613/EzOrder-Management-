@@ -17,6 +17,12 @@ class AdTableViewController: UITableViewController {
     
     let format = DateFormatter()
     var selectAd: QueryDocumentSnapshot?
+    
+    @IBAction func disMissButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     var Ads = ["Ad1"]
     override func viewDidLoad() {
@@ -84,6 +90,33 @@ class AdTableViewController: UITableViewController {
                                     let resImage = resData["resImage"] as? String{
                                     cell.RestaurantNameLabel.text = resName
                                     cell.resImageView.kf.setImage(with: URL(string: resImage))
+                                    if indexPath.row == 0 {
+                                        cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
+                                    }
+                                    if indexPath.row == 1 {
+                                        cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
+                                    }
+                                    if indexPath.row == 2 {
+                                        cell.fuckView.backgroundColor = .init(red: 218/255, green: 100/266, blue: 122/255, alpha: 1)
+                                        
+                                    }
+                                    if indexPath.row == 3 {
+                                        cell.fuckView.backgroundColor = .init(red: 152/255, green: 127/266, blue: 237/255, alpha: 1)
+                                        
+                                    }
+                                    if indexPath.row == 4 {
+                                        cell.fuckView.backgroundColor = .init(red: 57/255, green: 221/266, blue: 150/255, alpha: 1)
+                                        
+                                    }
+                                    if indexPath.row == 5 {
+                                        cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
+                                        
+                                    }
+                                    if indexPath.row == 6 {
+                                        cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
+                                        
+                                    }
+
                                 }
                             }
                         }
