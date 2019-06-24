@@ -13,7 +13,7 @@ class AdTableViewCell: UITableViewCell {
     @IBOutlet weak var resImageView: UIImageView!
     @IBOutlet weak var RestaurantNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var fuckView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

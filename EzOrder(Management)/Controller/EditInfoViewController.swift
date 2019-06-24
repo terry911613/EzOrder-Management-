@@ -158,7 +158,7 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
     }
     
     @IBAction func okay(_ sender: Any) {
-        storeconfirm()
+        
         let alert = UIAlertController(title: "確定申請通過?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
             print(21213)
@@ -170,6 +170,7 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
 db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 1])
                 self.navigationController?.popViewController(animated: true)
             }
+            self.storeconfirm()
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
@@ -179,7 +180,6 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
     }
     
     @IBAction func noay(_ sender: Any) {
-        storeconfirms()
         let alert = UIAlertController(title: "確定退回?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
             print(123123123)
@@ -189,6 +189,7 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
 db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 2])
                 self.navigationController?.popViewController(animated: true)
             }
+             self.storeconfirms()
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
