@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 243" translatesAutoresizingMaskIntoConstraints="NO" id="luY-e3-nSN">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="444.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXa-p7-yer">
                                 <rect key="frame" x="30" y="455" width="315" height="72"/>
