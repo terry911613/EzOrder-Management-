@@ -190,6 +190,7 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                 db.collection("res").document(resID).updateData(["status" : 2])
                 self.navigationController?.popViewController(animated: true)
             }
+            
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
