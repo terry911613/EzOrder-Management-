@@ -161,7 +161,6 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
         
         let alert = UIAlertController(title: "確定申請通過?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
-            print(21213)
             
             let db = Firestore.firestore()
             if let documentID = self.documentID,
@@ -186,10 +185,11 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
             let db = Firestore.firestore()
             if let documentID = self.documentID,
                 let resIDdocument = self.resIDdocument{
-db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 2])
+                db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 2])
+                self.storeconfirms()
                 self.navigationController?.popViewController(animated: true)
             }
-             self.storeconfirms()
+            
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
@@ -200,7 +200,7 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
     
     func storeconfirm() {
         let db = Firestore.firestore()
-        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 1])
+        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).updateData(["status" : 1])
         }
         
         
@@ -208,7 +208,7 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
     
     func storeconfirms () {
         let db = Firestore.firestore()
-        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 2])
+        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).updateData(["status" : 2])
         }
     }
     
