@@ -199,19 +199,6 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
         
     }
     
-    func storeconfirm() {
-        let db = Firestore.firestore()
-        if let resIDdocument = resID { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 1])
-        }
-    }
-    
-    func storeconfirms () {
-        let db = Firestore.firestore()
-        if  let resIDdocument = resID { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 2])
-        }
-    }
-    
-    
     func getType(){
         if let resIDdocument = resID{
             db.collection("res").document(resIDdocument).collection("foodType").getDocuments { (type, error) in
