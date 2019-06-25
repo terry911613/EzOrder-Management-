@@ -12,10 +12,11 @@ import Kingfisher
 import ViewAnimator
 
 class MemberShipTableViewController: UITableViewController {
+    
     var adArray = [QueryDocumentSnapshot]()
     let format = DateFormatter()
-    var performresid : String?
-    var typeID : String?
+//    var performresid : String?
+//    var typeID : String?
     
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -30,7 +31,6 @@ class MemberShipTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
                 else{
-                    print("dsfdsf")
                     self.adArray = store.documents
                     self.animateTableView()
                 }
@@ -47,15 +47,14 @@ class MemberShipTableViewController: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let prepare = segue.destination as! EditInfoViewController
-        if let performresid = performresid {
-            prepare.documentID = typeID
-            prepare.resIDdocument = performresid
+        if let index = tableView.indexPathForSelectedRow{
+            let documentID = adArray[index.row].documentID
+            if let resID = adArray[index.row].data()["resID"] as? String{
+                prepare.documentID = documentID
+                prepare.resID = resID
+            }
         }
-        
     }
-    
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -83,34 +82,6 @@ class MemberShipTableViewController: UITableViewController {
                         let green = CGFloat.random(in: 150...255)
                         let blue = CGFloat.random(in: 150...255)
                         cell.fuckView.backgroundColor = UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
-                        
-//                        if indexPath.row == 0 {
-//                            cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 1 {
-//                            cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 2 {
-//                            cell.fuckView.backgroundColor = .init(red: 218/255, green: 100/266, blue: 122/255, alpha: 1)
-//
-//                        }
-//                        if indexPath.row == 3 {
-//                            cell.fuckView.backgroundColor = .init(red: 152/255, green: 127/266, blue: 237/255, alpha: 1)
-//
-//                        }
-//                        if indexPath.row == 4 {
-//                            cell.fuckView.backgroundColor = .init(red: 57/255, green: 221/266, blue: 150/255, alpha: 1)
-//
-//                        }
-//                        if indexPath.row == 5 {
-//                            cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
-//
-//                        }
-//                        if indexPath.row == 6 {
-//                            cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
-//
-//                        }
-                        
                     }
                 }
             }
@@ -119,12 +90,7 @@ class MemberShipTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let AD = adArray[indexPath.row]
-        let typeAD = adArray[indexPath.row].documentID
-        self.typeID = typeAD
-        if let resID = AD.data()["resID"] as? String{
-            self.performresid = resID
-        }
+        
         performSegue(withIdentifier: "performResId", sender: self)
     }
 }

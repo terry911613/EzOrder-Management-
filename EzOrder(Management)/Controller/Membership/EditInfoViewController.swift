@@ -32,7 +32,6 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
     @IBOutlet weak var myMap: MKMapView!
     
     let db = Firestore.firestore()
-    let resID = Auth.auth().currentUser?.email
     var isEdit = false
     var isEditImage = false
     var resImage: String?
@@ -49,13 +48,13 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
     var isMorning = false
     var isNoon = false
     var isEvening = false
-    var  resIDdocument : String?
+    var resID : String?
     var documentID : String?
     override func viewDidLoad() {
-                super.viewDidLoad()
-                getType()
-            db.collection("res").document(
-                resIDdocument!).addSnapshotListener { (res, error) in
+        super.viewDidLoad()
+        getType()
+        if let resID = resID{
+            db.collection("res").document(resID).addSnapshotListener { (res, error) in
                 if let resData = res?.data(){
                     if let resImage = resData["resImage"] as? String,
                         let resName = resData["resName"] as? String,
@@ -72,7 +71,7 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                         self.resBookingLimit = resBookingLimit
                         self.resTaxID = resTaxID
                         self.resTime = resTime
-
+                        
                         self.isEdit = false
                         self.resLogoImageView.kf.setImage(with: URL(string: resImage))
                         self.resNameLabel.text = resName
@@ -81,11 +80,11 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                         self.resBookingLimitLabel.text = "\(resBookingLimit)"
                         self.resTaxIDLabel.text = resTaxID
                         self.resTimeLabel.text = resTime
-
+                        
                         self.morningButton.isEnabled = false
                         self.noonButton.isEnabled = false
                         self.eveningButton.isEnabled = false
-
+                        
                         self.resPeriod = resPeriod
                         for i in resPeriod{
                             if i == "1"{
@@ -101,8 +100,8 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                                 self.eveningButton.backgroundColor = .white
                             }
                         }
-
-
+                        
+                        
                         self.resLogoImageView.isUserInteractionEnabled = false
                         self.editButton.isHidden = true
                         self.locations = CLLocationManager()
@@ -128,21 +127,21 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                                 self.present(alertController, animated: true, completion: nil)
                             }
                         }
-
+                        
                     }
-
+                    
                 }
                 else{
-
+                    
                     self.isEdit = true
                     print("fuck it")
-
+                    
                     self.editButton.isHidden = false
                     self.morningButton.isEnabled = true
                     self.noonButton.isEnabled = true
                     self.eveningButton.isEnabled = true
                     self.resLogoImageView.isUserInteractionEnabled = true
-
+                    
                     self.resNameLabel.isHidden = true
                     self.resTelLabel.isHidden = true
                     self.resLocationLabel.isHidden = true
@@ -150,10 +149,10 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                     self.resTaxIDLabel.isHidden = true
                     self.resTimeLabel.isHidden = true
                     //                    self.resPeriodLabel.isHidden = true
-
+                    
                 }
             }
-        
+        }
         
     }
     
@@ -161,22 +160,21 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
         
         let alert = UIAlertController(title: "確定申請通過?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
-            print(21213)
             
             let db = Firestore.firestore()
             if let documentID = self.documentID,
-                let resIDdocument = self.resIDdocument{
+                let resID = self.resID{
                 print(12)
-db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 1])
+                db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 1])
+                db.collection("res").document(resID).updateData(["status" : 1])
                 self.navigationController?.popViewController(animated: true)
             }
-            self.storeconfirm()
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
-
+        
     }
     
     @IBAction func noay(_ sender: Any) {
@@ -184,37 +182,37 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
         let ok = UIAlertAction(title: "確定", style: .default) { (ok) in
             print(123123123)
             let db = Firestore.firestore()
+            print(self.documentID)
+            print(self.resID)
             if let documentID = self.documentID,
-                let resIDdocument = self.resIDdocument{
-db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 2])
+                let resID = self.resID{
+                db.collection("manage").document("check").collection("storeconfirm").document(documentID).updateData(["status": 2])
+                db.collection("res").document(resID).updateData(["status" : 2])
                 self.navigationController?.popViewController(animated: true)
             }
-             self.storeconfirms()
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
-
+        
     }
     
     func storeconfirm() {
         let db = Firestore.firestore()
-        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 1])
+        if let resIDdocument = resID { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 1])
         }
-        
-        
     }
     
     func storeconfirms () {
         let db = Firestore.firestore()
-        if  let resIDdocument = resIDdocument { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 2])
+        if  let resIDdocument = resID { db.collection("res").document(resIDdocument).collection("storeconfirm").document("status").updateData(["status" : 2])
         }
     }
     
     
     func getType(){
-        if let resIDdocument = resIDdocument{
+        if let resIDdocument = resID{
             db.collection("res").document(resIDdocument).collection("foodType").getDocuments { (type, error) in
                 if let type = type{
                     self.typeArray = type.documents
@@ -223,35 +221,23 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
             }
         }
     }
-    
-    
-    
-    
     @IBAction func periodButton(_ sender: UIButton) {
         if sender.tag == 0{
             isMorning = !isMorning
             if isMorning{
                 morningButton.alpha = 1
-                
             }
             else{
                 morningButton.alpha = 0.5
-                
-                
-                
             }
         }
         else if sender.tag == 1{
             isNoon = !isNoon
             if isNoon{
-                
                 noonButton.alpha = 1
-                
             }
             else{
                 noonButton.alpha = 0.5
-                
-                
             }
         }
         else{
@@ -262,13 +248,9 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
             }
             else{
                 eveningButton.alpha = 0.5
-                
-                
             }
         }
     }
-    
-    
     
     @IBAction func tapResLogoImageView(_ sender: UITapGestureRecognizer) {
         isEditImage = !isEditImage
@@ -279,8 +261,8 @@ db.collection("manage").document("check").collection("storeconfirm").document(do
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueMenu" {
-        let editMune = segue.destination as!  EditMenuViewController
-            editMune.prepares = resIDdocument!
+            let editMune = segue.destination as!  EditMenuViewController
+            editMune.prepares = resID!
             
         }
     }
