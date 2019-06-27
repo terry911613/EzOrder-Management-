@@ -20,28 +20,25 @@
             </objects>
             <point key="canvasLocation" x="-717" y="-403"/>
         </scene>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="YPY-x9-Ima">
             <objects>
-                <viewController id="07J-aC-P0C" sceneMemberID="viewController">
+                <viewController id="07J-aC-P0C" customClass="firstViewController" customModule="EzOrder_Management_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rbr-Na-ffO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 243" translatesAutoresizingMaskIntoConstraints="NO" id="luY-e3-nSN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="444.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXa-p7-yer">
-                                <rect key="frame" x="30" y="455" width="315" height="72"/>
-                                <string key="text">今 天 有 四 家 店 家 尚 未 審 核 
-以 及 五 件 廣 告 審 核 請 問
-要 先 做 什 麼 呢 ?</string>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今 天 有 四 家 店 家 尚 未 審 核" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-fd-Z5w">
+                                <rect key="frame" x="22" y="457" width="331" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 歡 迎 回 來" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-u0-Br9">
-                                <rect key="frame" x="153.5" y="609" width="68" height="16"/>
+                                <rect key="frame" x="153.5" y="616" width="68" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -58,11 +55,19 @@
                                     <segue destination="Qts-M9-ZEM" kind="show" id="hLY-Pm-XQy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXa-p7-yer">
+                                <rect key="frame" x="30" y="486" width="315" height="48"/>
+                                <string key="text">以 及 五 件 廣 告 審 核 請 問
+要 先 做 什 麼 呢 ?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UXa-p7-yer" firstAttribute="top" secondItem="luY-e3-nSN" secondAttribute="bottom" constant="10.5" id="0Ft-Hl-2hR"/>
                             <constraint firstItem="Aph-u0-Br9" firstAttribute="centerX" secondItem="Rbr-Na-ffO" secondAttribute="centerX" id="2HR-r1-pcN"/>
+                            <constraint firstItem="AbE-fd-Z5w" firstAttribute="top" secondItem="luY-e3-nSN" secondAttribute="bottom" constant="12.5" id="3wp-Sh-p6z"/>
                             <constraint firstItem="UXa-p7-yer" firstAttribute="leading" secondItem="Hev-ef-Gec" secondAttribute="leading" constant="30" id="43L-gK-g43"/>
                             <constraint firstItem="UXa-p7-yer" firstAttribute="centerX" secondItem="Rbr-Na-ffO" secondAttribute="centerX" id="BM5-WS-cJk"/>
                             <constraint firstItem="7l4-Q9-W7u" firstAttribute="centerX" secondItem="Rbr-Na-ffO" secondAttribute="centerX" id="CEn-xj-M9r"/>
@@ -78,12 +83,19 @@
                             <constraint firstItem="luY-e3-nSN" firstAttribute="trailing" secondItem="Hev-ef-Gec" secondAttribute="trailing" id="csf-hS-cwI"/>
                             <constraint firstItem="ZSU-LK-WQl" firstAttribute="centerY" secondItem="Rbr-Na-ffO" secondAttribute="centerY" id="d1b-nh-csS"/>
                             <constraint firstItem="Aph-u0-Br9" firstAttribute="top" secondItem="UXa-p7-yer" secondAttribute="bottom" constant="82" id="gzC-P3-Ljh"/>
+                            <constraint firstItem="Hev-ef-Gec" firstAttribute="trailing" secondItem="AbE-fd-Z5w" secondAttribute="trailing" constant="22" id="p9g-v8-ve3"/>
                             <constraint firstItem="luY-e3-nSN" firstAttribute="width" secondItem="Rbr-Na-ffO" secondAttribute="width" id="rQn-Wn-75t"/>
+                            <constraint firstItem="UXa-p7-yer" firstAttribute="top" secondItem="AbE-fd-Z5w" secondAttribute="bottom" constant="5" id="sKn-84-sxq"/>
+                            <constraint firstItem="AbE-fd-Z5w" firstAttribute="leading" secondItem="Hev-ef-Gec" secondAttribute="leading" constant="22" id="y6l-6v-PSQ"/>
                             <constraint firstItem="luY-e3-nSN" firstAttribute="centerX" secondItem="Rbr-Na-ffO" secondAttribute="centerX" id="zTX-9W-HCb"/>
                             <constraint firstItem="ZSU-LK-WQl" firstAttribute="height" secondItem="luY-e3-nSN" secondAttribute="height" multiplier="1:7" id="zgQ-7V-c6O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hev-ef-Gec"/>
                     </view>
+                    <connections>
+                        <outlet property="adtext" destination="UXa-p7-yer" id="Ex2-6n-Ama"/>
+                        <outlet property="storeLabel" destination="AbE-fd-Z5w" id="buE-qV-I3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xg-lx-k5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

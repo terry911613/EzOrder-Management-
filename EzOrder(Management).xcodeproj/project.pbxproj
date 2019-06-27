@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		162ABD342AF297515036DA1F /* Pods_EzOrder_Management_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7F3EEF13C9C581C2BF9D6 /* Pods_EzOrder_Management_.framework */; };
 		2C0205A422B2492200062DF5 /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0205A322B2492200062DF5 /* EditInfoViewController.swift */; };
+		2C29004022C23485005512BC /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29003F22C23485005512BC /* firstViewController.swift */; };
 		2C900B3F22B24A8000300EB3 /* EditMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B3E22B24A8000300EB3 /* EditMenuViewController.swift */; };
 		2C900B4122B24B0400300EB3 /* MainTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4022B24B0400300EB3 /* MainTypeCollectionViewCell.swift */; };
 		2C900B4522B24B7200300EB3 /* EditTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C900B4422B24B7200300EB3 /* EditTypeCollectionViewCell.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		2C0205A322B2492200062DF5 /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
+		2C29003F22C23485005512BC /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
 		2C900B3E22B24A8000300EB3 /* EditMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewController.swift; sourceTree = "<group>"; };
 		2C900B4022B24B0400300EB3 /* MainTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C900B4422B24B7200300EB3 /* EditTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				447A1768228C6E6B003AB41E /* Main.storyboard */,
+				2C29003F22C23485005512BC /* firstViewController.swift */,
 				447A1780228C6FE5003AB41E /* AD */,
 				447A1782228C6FE9003AB41E /* Membership */,
 			);
@@ -350,6 +353,7 @@
 				9DA955BE22A8D09E009365F5 /* MemberShipTableViewController.swift in Sources */,
 				447A1765228C6E6B003AB41E /* AppDelegate.swift in Sources */,
 				2C900B3F22B24A8000300EB3 /* EditMenuViewController.swift in Sources */,
+				2C29004022C23485005512BC /* firstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
