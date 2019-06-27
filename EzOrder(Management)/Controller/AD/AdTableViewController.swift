@@ -67,8 +67,6 @@ class AdTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return adArray.count
     }
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "adCell", for: indexPath) as! AdTableViewCell
         
@@ -87,28 +85,6 @@ class AdTableViewController: UITableViewController {
                         let green = CGFloat.random(in: 150...255)
                         let blue = CGFloat.random(in: 150...255)
                         cell.fuckView.backgroundColor = UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
-                        
-//                        if indexPath.row == 0 {
-//                            cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 1 {
-//                            cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 2 {
-//                            cell.fuckView.backgroundColor = .init(red: 218/255, green: 100/266, blue: 122/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 3 {
-//                            cell.fuckView.backgroundColor = .init(red: 152/255, green: 127/266, blue: 237/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 4 {
-//                            cell.fuckView.backgroundColor = .init(red: 57/255, green: 221/266, blue: 150/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 5 {
-//                            cell.fuckView.backgroundColor = .init(red: 100/255, green: 161/266, blue: 221/255, alpha: 1)
-//                        }
-//                        if indexPath.row == 6 {
-//                            cell.fuckView.backgroundColor = .init(red: 229/255, green: 166/266, blue: 105/255, alpha: 1)
-//                        }
                     }
                 }
             }
@@ -120,7 +96,6 @@ class AdTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let AD = adArray[indexPath.row]
         selectAd = AD
-        print(AD)
         performSegue(withIdentifier: "adDetailSegue", sender: self)
     }
 }

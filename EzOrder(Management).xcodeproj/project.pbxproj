@@ -131,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				447A1768228C6E6B003AB41E /* Main.storyboard */,
-				2C29003F22C23485005512BC /* firstViewController.swift */,
 				447A1780228C6FE5003AB41E /* AD */,
 				447A1782228C6FE9003AB41E /* Membership */,
 			);
@@ -185,6 +184,7 @@
 		9DA955C422A8D693009365F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C29003F22C23485005512BC /* firstViewController.swift */,
 				445C722322C1F5E8007CD17F /* AD */,
 				445C722422C1F60A007CD17F /* Membership */,
 			);

@@ -13,7 +13,7 @@ import ViewAnimator
 
 class MemberShipTableViewController: UITableViewController {
     
-    var adArray = [QueryDocumentSnapshot]()
+    var resArray = [QueryDocumentSnapshot]()
     let format = DateFormatter()
 //    var performresid : String?
 //    var typeID : String?
@@ -22,16 +22,16 @@ class MemberShipTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
-        print(adArray.count)
+        print(resArray.count)
         let db = Firestore.firestore()
         db.collection("manage").document("check").collection("storeconfirm").whereField("status", isEqualTo: 0).addSnapshotListener  { (store, error) in
             if let store = store{
                 if store.documents.isEmpty{
-                    self.adArray.removeAll()
+                    self.resArray.removeAll()
                     self.tableView.reloadData()
                 }
                 else{
-                    self.adArray = store.documents
+                    self.resArray = store.documents
                     self.animateTableView()
                 }
             }
@@ -48,8 +48,8 @@ class MemberShipTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let prepare = segue.destination as! EditInfoViewController
         if let index = tableView.indexPathForSelectedRow{
-            let documentID = adArray[index.row].documentID
-            if let resID = adArray[index.row].data()["resID"] as? String{
+            let documentID = resArray[index.row].documentID
+            if let resID = resArray[index.row].data()["resID"] as? String{
                 prepare.documentID = documentID
                 prepare.resID = resID
             }
@@ -60,14 +60,14 @@ class MemberShipTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return adArray.count
+        return resArray.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantsCell", for: indexPath) as! MemberShipTableViewCell
         
-        let confirm = adArray[indexPath.row]
+        let confirm = resArray[indexPath.row]
         let db = Firestore.firestore()
         if let resID = confirm.data()["resID"] as? String,
             let timeStamp = confirm.data()["date"] as? Timestamp {
