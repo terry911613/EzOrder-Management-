@@ -188,11 +188,6 @@ extension EditMenuViewController: UICollectionViewDelegate,UICollectionViewDataS
             }
             
         }
-        else{
-            foodIndex = indexPath.row
-            performSegue(withIdentifier: "foodDetailSegue", sender: self)
-            print(69)
-        }
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == typeCollectionView{
