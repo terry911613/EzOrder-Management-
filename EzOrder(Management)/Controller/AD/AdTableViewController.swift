@@ -37,7 +37,7 @@ class AdTableViewController: UITableViewController {
             }
         }
         format.locale = Locale(identifier: "zh_TW")
-        format.dateFormat = "yyyy年MM月dd日 a hh:mm"
+        format.dateFormat = "yyyy年MM月dd日"
     }
     func animateTableView(){
         let animations = [AnimationType.from(direction: .top, offset: 30.0)]
