@@ -119,9 +119,8 @@ class EditInfoViewController: UIViewController,CLLocationManagerDelegate{
                                     self.setMapAnnotation(location)
                                 }
                             } else {
-                                let title = "收尋失敗"
-                                let message = "目前網路連線不穩定"
-                                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                                let title = "地址錯誤"
+                                let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
                                 let ok = UIAlertAction(title: "OK", style: .default)
                                 alertController.addAction(ok)
                                 self.present(alertController, animated: true, completion: nil)
