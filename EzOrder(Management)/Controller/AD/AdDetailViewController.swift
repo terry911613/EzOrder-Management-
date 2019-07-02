@@ -24,7 +24,7 @@ class AdDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         format.locale = Locale(identifier: "zh_TW")
-        format.dateFormat = "yyyy年MM月dd日 a hh:mm"
+        format.dateFormat = "yyyy年MM月dd日"
         
         if let adData = ad?.data(){
             if let startTimeStamp = adData["startDate"] as? Timestamp,
