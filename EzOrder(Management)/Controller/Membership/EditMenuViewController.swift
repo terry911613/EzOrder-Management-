@@ -161,6 +161,7 @@ extension EditMenuViewController: UICollectionViewDelegate,UICollectionViewDataS
             
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! EditFoodCollectionViewCell
+            cell.foodImageView.layer.cornerRadius = cell.foodImageView.frame.width/2
             
             let food = foodArray[indexPath.row]
             if let foodName = food.data()["foodName"] as? String,
